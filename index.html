@@ -22,19 +22,14 @@
     <div class="container">
         <div class="left">
             <h1 class="title">vanyahvh</h1>
-
             <a class="btn glass" href="https://t.me/cyber_specealist" target="_blank">Telegram канал</a>
             <a class="btn glass" href="https://t.me/network_killed" target="_blank">Услуга</a>
             <a class="btn glass" href="https://discordapp.com/users/1417851598947881065" target="_blank">Discord</a>
         </div>
-
         <div class="right">
             <img src="image.jpg" alt="vanyahvh visual">
         </div>
-
-        <button class="theme-btn" id="themeToggle">
-            🌞
-        </button>
+        <button class="theme-btn" id="themeToggle">🌞</button>
     </div>
 </section>
 
@@ -62,7 +57,6 @@ function updateTheme() {
     const isLight = body.classList.contains("light");
     toggle.textContent = isLight ? "🌙" : "🌞";
 
-    // обновление цвета табличек
     document.querySelectorAll('.tags a').forEach(a => {
         a.style.color = isLight ? "#000" : "#fff";
         a.style.borderColor = isLight ? "#000" : "#fff";
@@ -70,9 +64,7 @@ function updateTheme() {
 }
 
 // Инициализация темы
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light");
-}
+if (localStorage.getItem("theme") === "light") body.classList.add("light");
 updateTheme();
 
 // Переключение темы
