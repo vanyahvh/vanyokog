@@ -1,12 +1,24 @@
-/* ===== SLIDES ===== */
-.slide {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+/* ===== VARIABLES ===== */
+:root {
+    --bg: #000000;
+    --text: #ffffff;
+    --accent: #00ffdd;
+    --transition: 0.4s ease;
 }
 
-.second {
-    background: rgba(255,255,255,0.02);
+body.light {
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background var(--transition), color var(--transition);
+    overflow-x: hidden;
 }
 
 /* ===== TAGS ===== */
@@ -17,6 +29,9 @@
     display: flex;
     gap: 10px;
     z-index: 100;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s forwards 0.5s;
 }
 
 .tags a {
@@ -34,26 +49,99 @@
     color: var(--bg);
 }
 
-/* ===== SECOND SLIDE TEXT ===== */
+/* ===== SLIDES ===== */
+.slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10vw;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.slide .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    max-width: 600px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.right img {
+    max-width: 400px;
+    border-radius: 20px;
+    animation: fadeInRight 1s ease forwards;
+}
+
+/* ===== TITLES ===== */
+.title {
+    font-size: 96px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
 .subtitle {
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 900;
     margin-bottom: 20px;
 }
 
 .desc {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     max-width: 500px;
 }
 
-/* ===== GHOST BLOCK ===== */
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 12px 24px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* ===== GHOST TEXT ===== */
 .ghost {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.15;
-    font-size: 48px;
+    font-size: 96px;
     font-weight: 900;
+    color: var(--text);
+    opacity: 0.05;
     text-transform: uppercase;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(20px);}
+    100% { opacity: 1; transform: translateX(0);}
 }
