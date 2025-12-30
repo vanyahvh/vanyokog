@@ -1,126 +1,66 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>vanyahvh</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-    --bg: #000;
-    --text: #fff;
-    --btn-bg: #fff;
-    --btn-text: #000;
-}
+    <!-- SEO / GitHub -->
+    <meta name="description" content="vanyahvh — digital / cyber presence">
+    <meta name="theme-color" content="#000000">
 
-body.light {
-    --bg: #fff;
-    --text: #000;
-    --btn-bg: #000;
-    --btn-text: #fff;
-}
+    <title>vanyahvh</title>
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: 0.3s;
-}
+    <!-- Шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-.container {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-    gap: 30px;
-}
-
-.left {
-    max-width: 450px;
-}
-
-.title {
-    font-size: 64px;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: block;
-    text-decoration: none;
-    background: var(--btn-bg);
-    color: var(--btn-text);
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-.theme-btn {
-    cursor: pointer;
-    border: none;
-    width: 100%;
-}
-
-.right img {
-    max-width: 420px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* 📱 Мобильная адаптация */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .title {
-        font-size: 48px;
-    }
-
-    .right img {
-        max-width: 90%;
-    }
-}
-</style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-    <div class="left">
+<main class="container">
+    <section class="left">
         <h1 class="title">vanyahvh</h1>
 
-        <a class="btn" href="https://t.me/cyber_specealist" target="_blank">
+        <a class="btn" href="https://t.me/cyber_specealist" target="_blank" rel="noopener">
             Telegram канал
         </a>
 
-        <a class="btn" href="https://t.me/network_killed" target="_blank">
+        <a class="btn" href="https://t.me/network_killed" target="_blank" rel="noopener">
             Услуга
         </a>
 
-        <button class="btn theme-btn" onclick="toggleTheme()">
+        <button class="btn theme-btn" id="themeToggle">
             Сменить тему
         </button>
-    </div>
+    </section>
 
-    <div class="right">
-        <img src="https://i.pinimg.com/originals/4b/d8/36/4bd836b19bfc498df7a47d8a25c2c558.jpg" alt="image">
-    </div>
-</div>
+    <section class="right">
+        <img
+            src="https://i.pinimg.com/originals/4b/d8/36/4bd836b19bfc498df7a47d8a25c2c558.jpg"
+            alt="vanyahvh visual"
+            loading="lazy"
+        >
+    </section>
+</main>
 
 <script>
-function toggleTheme() {
-    document.body.classList.toggle("light");
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
+
+// загрузка сохранённой темы
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light");
 }
+
+toggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("light") ? "light" : "dark"
+    );
+});
 </script>
 
 </body>
