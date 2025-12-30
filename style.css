@@ -1,147 +1,16 @@
-/* ===== VARIABLES ===== */
-:root {
-    --bg: #000000;
-    --text: #ffffff;
-    --accent: #00ffdd;
-    --transition: 0.4s ease;
+/* ===== GLASS EFFECT ===== */
+.glass {
+    background: rgba(255, 255, 255, 0.1); /* прозрачный слой */
+    backdrop-filter: blur(10px); /* размытие фона */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* тонкая рамка */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    transition: background 0.4s ease, border 0.4s ease;
 }
 
-body.light {
-    --bg: #ffffff;
-    --text: #000000;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: background var(--transition), color var(--transition);
-    overflow-x: hidden;
-}
-
-/* ===== TAGS ===== */
-.tags {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 100;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 1s forwards 0.5s;
-}
-
-.tags a {
-    padding: 6px 12px;
-    border: 1px solid var(--text);
-    border-radius: 20px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.tags a:hover {
-    background: var(--text);
-    color: var(--bg);
-}
-
-/* ===== SLIDES ===== */
-.slide {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10vw;
-    scroll-snap-align: start;
-    position: relative;
-}
-
-.slide .container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.left {
-    max-width: 600px;
-    animation: fadeInUp 1s ease forwards;
-}
-
-.right img {
-    max-width: 400px;
-    border-radius: 20px;
-    animation: fadeInRight 1s ease forwards;
-}
-
-/* ===== TITLES ===== */
-.title {
-    font-size: 96px;
-    font-weight: 900;
-    margin: 0 0 20px 0;
-    line-height: 1.1;
-}
-
-.subtitle {
-    font-size: 64px;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.desc {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 500px;
-}
-
-/* ===== BUTTONS ===== */
-.btn {
-    display: inline-block;
-    margin: 10px 10px 10px 0;
-    padding: 12px 24px;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background: var(--accent);
-    color: var(--bg);
-}
-
-/* ===== GHOST TEXT ===== */
-.ghost {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 96px;
-    font-weight: 900;
-    color: var(--text);
-    opacity: 0.05;
-    text-transform: uppercase;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px);}
-    100% { opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInRight {
-    0% { opacity: 0; transform: translateX(20px);}
-    100% { opacity: 1; transform: translateX(0);}
+/* Подстроить под тёмную и светлую тему */
+body.light .glass {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0,0,0,0.2);
 }
