@@ -1,93 +1,36 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="vanyahvh — digital / cyber presence">
-    <meta name="theme-color" content="#000000">
-
-    <title>vanyahvh</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <body>
-
-<!-- 🔝 ТАБЛИЧКИ -->
 <nav class="tags">
     <a href="https://t.me/vanyokog" target="_blank">Ваня</a>
     <a href="https://t.me/jsonhttps" target="_blank">Талерант</a>
     <a href="https://t.me/https_ulst_com" target="_blank">Хелус</a>
 </nav>
 
-<!-- ===== СЛАЙД 1 ===== -->
 <section class="slide">
     <div class="container">
         <div class="left">
             <h1 class="title">vanyahvh</h1>
-
-            <a class="btn" href="https://t.me/cyber_specealist" target="_blank">
-                Telegram канал
-            </a>
-
-            <a class="btn" href="https://t.me/network_killed" target="_blank">
-                Услуга
-            </a>
-
-            <a class="btn" href="https://discordapp.com/users/1417851598947881065" target="_blank">
-                Discord
-            </a>
-
-            <button class="btn theme-btn" id="themeToggle">
-                Сменить тему
-            </button>
+            <a class="btn" href="https://t.me/cyber_specealist" target="_blank">Telegram канал</a>
+            <a class="btn" href="https://t.me/network_killed" target="_blank">Услуга</a>
+            <a class="btn" href="https://discordapp.com/users/1417851598947881065" target="_blank">Discord</a>
+            <button class="btn theme-btn" id="themeToggle">Сменить тему</button>
         </div>
-
         <div class="right">
             <img src="image.jpg" alt="vanyahvh visual">
         </div>
     </div>
 </section>
 
-<!-- ===== СЛАЙД 2 ===== -->
 <section class="slide second">
     <div class="container">
         <div class="left">
             <h2 class="subtitle">Кто я?</h2>
-
             <p class="desc">
-                Я — сильный <b>OSINT-специалист</b> и уверенный <b>HVH игрок</b>.  
-                Умею работать с информацией, анализировать и находить то,
-                что другие не видят.
-                <br><br>
-                Моя команда — это <b>Талерант</b> и <b>Хелус</b> —
-                умные, талантливые и надёжные люди.
+                Я — сильный <b>OSINT-специалист</b> и уверенный <b>HVH игрок</b>.<br>
+                Моя команда — это <b>Талерант</b> и <b>Хелус</b>.
             </p>
         </div>
-
         <div class="right ghost">
-            <span>trusted crew</span>
+            trusted crew
         </div>
     </div>
 </section>
-
-<script>
-const toggle = document.getElementById("themeToggle");
-const body = document.body;
-
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light");
-}
-
-toggle.addEventListener("click", () => {
-    body.classList.toggle("light");
-    localStorage.setItem(
-        "theme",
-        body.classList.contains("light") ? "light" : "dark"
-    );
-});
-</script>
-
-</body>
-</html>
